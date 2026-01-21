@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { useInView } from "framer-motion";
 import SectionHeader from "./SectionHeader";
 import AnimatedCounter from "./AnimatedCounter";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Zap, Sun, Battery, TrendingUp, TrendingDown, Minus } from "lucide-react";
 
 const products = [
@@ -48,6 +49,7 @@ const products = [
 ];
 
 const NewThreeSection = () => {
+  const { t } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -55,8 +57,8 @@ const NewThreeSection = () => {
     <section className="py-20 md:py-32 bg-background relative" ref={ref}>
       <div className="container mx-auto px-4">
         <SectionHeader
-          label="Sectoral Transformation"
-          title='The "New Three"'
+          label={t('sectoralTransformation')}
+          title={t('newThree')}
           description="The export composition shifted from the 'Old Three' (Clothing, Furniture, Appliances) to high-value green technology, signaling China's movement up the global value chain."
         />
 

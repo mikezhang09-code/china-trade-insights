@@ -88,11 +88,10 @@ const OutlookSection = () => {
               "
             </div>
             <p className="font-display text-2xl md:text-3xl lg:text-4xl font-medium text-foreground leading-relaxed mb-6">
-              China's leaders exported their surplus demand problem rather than solving it 
-              through consumption promotion.
+              {t('conclusionQuote')}
             </p>
             <footer className="text-muted-foreground">
-              — Analysis of the $1.2 Trillion Paradox
+              {t('conclusionAttribution')}
             </footer>
           </blockquote>
         </motion.div>
