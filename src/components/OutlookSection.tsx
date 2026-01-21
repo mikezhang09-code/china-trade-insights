@@ -18,7 +18,6 @@ const OutlookSection = () => {
         "EU investigating anti-dumping measures on Chinese EVs",
         "Brazil, Indonesia, Turkey imposing protectionist measures",
         "U.S. universal tariffs of 10-60%, avg. 57.6%",
-      ].map((_, index) => t(`globalBacklashItem${index + 1}`)),
       ],
     },
     {
@@ -37,7 +36,6 @@ const OutlookSection = () => {
         "Currency appreciation pressure toward 6.85-6.90 RMB/USD",
         "15th Five-Year Plan faces existential consumption crisis",
         "Export-to-grow model hitting structural limits",
-      ].map((_, index) => t(`outlook2030Item${index + 1}`)),
       ],
     },
   ];
@@ -90,11 +88,10 @@ const OutlookSection = () => {
               "
             </div>
             <p className="font-display text-2xl md:text-3xl lg:text-4xl font-medium text-foreground leading-relaxed mb-6">
-              China's leaders exported their surplus demand problem rather than solving it 
-              through consumption promotion.
+              {t('conclusionQuote')}
             </p>
             <footer className="text-muted-foreground">
-              — Analysis of the $1.2 Trillion Paradox
+              {t('conclusionAttribution')}
             </footer>
           </blockquote>
         </motion.div>

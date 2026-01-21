@@ -11,6 +11,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import SectionHeader from "./SectionHeader";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const data = [
   { year: "2018", surplus: 352, exports: 2487, imports: 2135, event: "Trade war begins" },
@@ -47,6 +48,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 };
 
 const TimelineChart = () => {
+  const { t } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -54,8 +56,8 @@ const TimelineChart = () => {
     <section className="py-20 md:py-32 bg-background relative" ref={ref}>
       <div className="container mx-auto px-4">
         <SectionHeader
-          label="Historical Evolution"
-          title="The Surge: 2018-2025"
+          label={t('historicalEvolution')}
+          title={t('theSurge')}
           description="Despite the U.S.-China trade war beginning in 2018, China's trade surplus paradoxically entered a new expansionary phase, nearly quadrupling in seven years."
         />
 

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import SectionHeader from "./SectionHeader";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight, Ship, MapPin } from "lucide-react";
 
 const flowData = [
@@ -26,6 +27,7 @@ const flowData = [
 ];
 
 const GeographicPivot = () => {
+  const { t } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -33,8 +35,8 @@ const GeographicPivot = () => {
     <section className="py-20 md:py-32 bg-muted/20 relative" ref={ref}>
       <div className="container mx-auto px-4">
         <SectionHeader
-          label="Trade Flow Analysis"
-          title="The Connector Economy"
+          label={t('tradeFlowAnalysis')}
+          title={t('connectorEconomy')}
           description="Exports to the U.S. fell 20%, yet total exports rose. The solution? Strategic transshipment through ASEAN partners."
         />
 

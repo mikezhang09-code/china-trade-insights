@@ -10,6 +10,18 @@ export const translations = {
     chinaGdp: "of China's GDP",
     globalMfgOutput: "Global Mfg Output",
     
+    // Timeline Section
+    historicalEvolution: "Historical Evolution",
+    theSurge: "The Surge: 2018-2025",
+    
+    // Sectoral Section
+    sectoralTransformation: "Sectoral Transformation",
+    newThree: "The \"New Three\"",
+    
+    // Geographic Section
+    tradeFlowAnalysis: "Trade Flow Analysis",
+    connectorEconomy: "The Connector Economy",
+    
     // Drivers Section
     driversLabel: "Structural Analysis",
     driversTitle: "Six Drivers of the Surplus",
@@ -47,6 +59,10 @@ export const translations = {
     theParadox: "The Paradox",
     outlook2030: "2030 Outlook",
     
+    // Conclusion Quote
+    conclusionQuote: "China's leaders exported their surplus demand problem rather than solving it through consumption promotion.",
+    conclusionAttribution: "— Analysis of the $1.2 Trillion Paradox",
+    
     // Language Switcher
     language: "Language",
     english: "English",
@@ -62,6 +78,18 @@ export const translations = {
     yoyGrowth: "同比增长",
     chinaGdp: "占中国GDP",
     globalMfgOutput: "全球制造业产出",
+    
+    // Timeline Section
+    historicalEvolution: "历史演变",
+    theSurge: "激增期：2018-2025",
+    
+    // Sectoral Section
+    sectoralTransformation: "行业转型",
+    newThree: "新三样",
+    
+    // Geographic Section
+    tradeFlowAnalysis: "贸易流向分析",
+    connectorEconomy: "连接器经济",
     
     // Drivers Section
     driversLabel: "结构性分析",
@@ -99,6 +127,10 @@ export const translations = {
     globalBacklash: "全球反弹",
     theParadox: "悖论",
     outlook2030: "2030年展望",
+    
+    // Conclusion Quote
+    conclusionQuote: "中国领导人将过剩需求问题出口到海外，而不是通过促进消费来解决问题。",
+    conclusionAttribution: "——1.2万亿美元悖论分析",
     
     // Language Switcher
     language: "语言",
