@@ -13,20 +13,9 @@ import {
 import SectionHeader from "./SectionHeader";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const data = [
-  { year: "2018", surplus: 352, exports: 2487, imports: 2135, event: "Trade war begins" },
-  { year: "2019", surplus: 420, exports: 2498, imports: 2078, event: "Stabilization" },
-  { year: "2020", surplus: 533, exports: 2590, imports: 2057, event: "Pandemic onset" },
-  { year: "2021", surplus: 670, exports: 3364, imports: 2694, event: "Post-pandemic surge" },
-  { year: "2022", surplus: 878, exports: 3593, imports: 2715, event: "Record high (at time)" },
-  { year: "2023", surplus: 800, exports: 3500, imports: 2700, event: "Global slowdown" },
-  { year: "2024", surplus: 990, exports: 3650, imports: 2660, event: "Continued elevation" },
-  { year: "2025", surplus: 1189, exports: 3850, imports: 2661, event: "All-time record" },
-];
-
-const CustomTooltip = ({ active, payload, label }: any) => {
+const CustomTooltip = ({ active, payload, label, data }: any) => {
   if (active && payload && payload.length) {
-    const item = data.find((d) => d.year === label);
+    const item = data.find((d: any) => d.year === label);
     return (
       <div className="bg-card border border-border rounded-lg p-4 shadow-lg">
         <p className="font-display text-lg font-bold text-foreground mb-1">
@@ -52,13 +41,24 @@ const TimelineChart = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  const data = [
+    { year: "2018", surplus: 352, exports: 2487, imports: 2135, event: t('tradeWarBegins') },
+    { year: "2019", surplus: 420, exports: 2498, imports: 2078, event: t('stabilization') },
+    { year: "2020", surplus: 533, exports: 2590, imports: 2057, event: t('pandemicOnset') },
+    { year: "2021", surplus: 670, exports: 3364, imports: 2694, event: t('postPandemicSurge') },
+    { year: "2022", surplus: 878, exports: 3593, imports: 2715, event: t('recordHigh') },
+    { year: "2023", surplus: 823, exports: 3380, imports: 2557, event: t('stabilization') },
+    { year: "2024", surplus: 990, exports: 3520, imports: 2530, event: t('stabilization') },
+    { year: "2025", surplus: 1200, exports: 3800, imports: 2600, event: t('trillionThreshold') },
+  ];
+
   return (
     <section className="py-20 md:py-32 bg-background relative" ref={ref}>
       <div className="container mx-auto px-4">
         <SectionHeader
           label={t('historicalEvolution')}
           title={t('theSurge')}
-          description="Despite the U.S.-China trade war beginning in 2018, China's trade surplus paradoxically entered a new expansionary phase, nearly quadrupling in seven years."
+          description={t('timelineDescription')}
         />
 
         <motion.div
@@ -96,7 +96,7 @@ const TimelineChart = () => {
                   axisLine={{ stroke: "hsl(220, 15%, 18%)" }}
                   tickFormatter={(value) => `$${value}B`}
                 />
-                <Tooltip content={<CustomTooltip />} />
+                <Tooltip content={<CustomTooltip data={data} />} />
                 <Area
                   type="monotone"
                   dataKey="surplus"

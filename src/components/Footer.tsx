@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="py-12 bg-card border-t border-border">
       <div className="container mx-auto px-4">
@@ -12,17 +15,15 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <h4 className="font-display text-2xl font-bold text-gradient-gold mb-4">
-            The Great Divergence
+            {t('footerTitle')}
           </h4>
           <p className="text-muted-foreground text-sm max-w-2xl mx-auto mb-6">
-            An analysis of China's historic $1.2 trillion trade surplus in 2025 and its 
-            implications for global trade. Data compiled from AP News, IMF, Chinese Customs 
-            Administration, and other authoritative sources.
+            {t('footerDescription')}
           </p>
           <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
-            <span>January 2026</span>
+            <span>{t('footerDate')}</span>
             <span className="w-1 h-1 rounded-full bg-muted-foreground" />
-            <span>Geoeconomic Analysis</span>
+            <span>{t('footerLabel')}</span>
           </div>
         </motion.div>
       </div>

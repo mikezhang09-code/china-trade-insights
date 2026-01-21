@@ -5,31 +5,31 @@ import SectionHeader from "./SectionHeader";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight, Ship, MapPin } from "lucide-react";
 
-const flowData = [
-  {
-    from: "China",
-    to: "ASEAN",
-    label: "Intermediate Goods",
-    subLabel: "Chips, Textiles, Components",
-  },
-  {
-    from: "ASEAN",
-    to: "Global Market",
-    label: "Assembly & Re-labeling",
-    subLabel: "Vietnam, Thailand",
-  },
-  {
-    from: "Global Market",
-    to: "USA/EU",
-    label: "Finished Goods",
-    subLabel: "Bypassing Direct Tariffs",
-  },
-];
-
 const GeographicPivot = () => {
   const { t } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const flowData = [
+    {
+      from: t('china'),
+      to: t('asean'),
+      label: t('intermediateGoods'),
+      subLabel: t('chipsTextiles'),
+    },
+    {
+      from: t('asean'),
+      to: t('globalMarket'),
+      label: t('assemblyRelabeling'),
+      subLabel: t('vietnam') + ", " + t('thailand'),
+    },
+    {
+      from: t('globalMarket'),
+      to: t('usa') + "/" + t('eu'),
+      label: t('finishedGoods'),
+      subLabel: t('bypassingTariffs'),
+    },
+  ];
 
   return (
     <section className="py-20 md:py-32 bg-muted/20 relative" ref={ref}>
@@ -37,7 +37,7 @@ const GeographicPivot = () => {
         <SectionHeader
           label={t('tradeFlowAnalysis')}
           title={t('connectorEconomy')}
-          description="Exports to the U.S. fell 20%, yet total exports rose. The solution? Strategic transshipment through ASEAN partners."
+          description={t('geographicDescription')}
         />
 
         {/* Flow Diagram */}
@@ -127,24 +127,24 @@ const GeographicPivot = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <h4 className="font-display text-xl font-bold text-foreground mb-4">
-              Latin America: Strategic Backyard
+              {t('latinAmericaTitle')}
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <div>
-                  <p className="text-foreground font-medium">Port of Chancay (Peru)</p>
+                  <p className="text-foreground font-medium">{t('portOfChancay')}</p>
                   <p className="text-sm text-muted-foreground">
-                    A new direct artery to Shanghai, bypassing U.S. routes
+                    {t('chancayDescription')}
                   </p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <div>
-                  <p className="text-foreground font-medium">The Soy Swap</p>
+                  <p className="text-foreground font-medium">{t('soySwap')}</p>
                   <p className="text-sm text-muted-foreground">
-                    Shifting purchases to Brazil to sideline U.S. farmers
+                    {t('soySwapDescription')}
                   </p>
                 </div>
               </li>
@@ -159,24 +159,24 @@ const GeographicPivot = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <h4 className="font-display text-xl font-bold text-foreground mb-4">
-              ASEAN: The Connector Hub
+              {t('aseanConnectorHub')}
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <span className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
                 <div>
-                  <p className="text-foreground font-medium">+13.4% Export Growth</p>
+                  <p className="text-foreground font-medium">{t('exportGrowthLabel')}</p>
                   <p className="text-sm text-muted-foreground">
-                    ASEAN overtook EU/US as China's #1 trading partner
+                    {t('aseanTradingPartner')}
                   </p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <span className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
                 <div>
-                  <p className="text-foreground font-medium">RCEP Integration</p>
+                  <p className="text-foreground font-medium">{t('rcepIntegration')}</p>
                   <p className="text-sm text-muted-foreground">
-                    Regional trade pact with China at the center
+                    {t('rcepDescription')}
                   </p>
                 </div>
               </li>
