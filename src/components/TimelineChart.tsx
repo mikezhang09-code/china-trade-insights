@@ -58,7 +58,7 @@ const TimelineChart = () => {
         <SectionHeader
           label={t('historicalEvolution')}
           title={t('theSurge')}
-          description="Despite the U.S.-China trade war beginning in 2018, China's trade surplus paradoxically entered a new expansionary phase, nearly quadrupling in seven years."
+          description={t('timelineDescription')}
         />
 
         <motion.div

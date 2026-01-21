@@ -37,7 +37,7 @@ const GeographicPivot = () => {
         <SectionHeader
           label={t('tradeFlowAnalysis')}
           title={t('connectorEconomy')}
-          description="Exports to the U.S. fell 20%, yet total exports rose. The solution? Strategic transshipment through ASEAN partners."
+          description={t('geographicDescription')}
         />
 
         {/* Flow Diagram */}

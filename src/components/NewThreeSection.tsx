@@ -6,52 +6,49 @@ import AnimatedCounter from "./AnimatedCounter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Zap, Sun, Battery, TrendingUp, TrendingDown, Minus } from "lucide-react";
 
-const products = [
-  {
-    icon: Zap,
-    name: "Electric Vehicles",
-    stats: {
-      exports: "7M+ units",
-      growth: "+21%",
-      trend: "up",
-      marketShare: "12.8% of EU market",
-    },
-    description:
-      "BYD became the world's largest EV manufacturer. China pivoted to Europe and surged PHEV exports to address range anxiety concerns.",
-    color: "from-blue-500 to-cyan-500",
-  },
-  {
-    icon: Sun,
-    name: "Solar Photovoltaics",
-    stats: {
-      exports: "Record Volume",
-      growth: "-40% value",
-      trend: "down",
-      marketShare: "$0.07-0.09/watt",
-    },
-    description:
-      "Record volumes (46 GW in August) but collapsed value due to deflationary pricing. China canceled 13% VAT export rebate to force consolidation.",
-    color: "from-yellow-500 to-orange-500",
-  },
-  {
-    icon: Battery,
-    name: "Lithium Batteries",
-    stats: {
-      exports: "+23% growth",
-      growth: "+23%",
-      trend: "up",
-      marketShare: "69% global market",
-    },
-    description:
-      "China controls 69% of the global EV battery market. CATL dominates global supply chain. West remains dependent on Chinese refined lithium.",
-    color: "from-green-500 to-emerald-500",
-  },
-];
-
 const NewThreeSection = () => {
   const { t } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const products = [
+    {
+      icon: Zap,
+      name: t('electricVehicles'),
+      stats: {
+        exports: t('evExports'),
+        growth: t('evGrowth'),
+        trend: "up",
+        marketShare: t('evMarketShare'),
+      },
+      description: t('evDescription'),
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      icon: Sun,
+      name: t('solarPhotovoltaics'),
+      stats: {
+        exports: t('solarExports'),
+        growth: t('solarGrowth'),
+        trend: "down",
+        marketShare: t('solarMarketShare'),
+      },
+      description: t('solarDescription'),
+      color: "from-yellow-500 to-orange-500",
+    },
+    {
+      icon: Battery,
+      name: t('lithiumBatteries'),
+      stats: {
+        exports: t('batteryExports'),
+        growth: t('batteryGrowth'),
+        trend: "up",
+        marketShare: t('batteryMarketShare'),
+      },
+      description: t('batteryDescription'),
+      color: "from-green-500 to-emerald-500",
+    },
+  ];
 
   return (
     <section className="py-20 md:py-32 bg-background relative" ref={ref}>
@@ -59,7 +56,7 @@ const NewThreeSection = () => {
         <SectionHeader
           label={t('sectoralTransformation')}
           title={t('newThree')}
-          description="The export composition shifted from the 'Old Three' (Clothing, Furniture, Appliances) to high-value green technology, signaling China's movement up the global value chain."
+          description={t('newThreeDescription')}
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

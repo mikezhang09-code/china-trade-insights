@@ -13,14 +13,39 @@ export const translations = {
     // Timeline Section
     historicalEvolution: "Historical Evolution",
     theSurge: "The Surge: 2018-2025",
+    timelineDescription: "Despite the U.S.-China trade war beginning in 2018, China's trade surplus paradoxically entered a new expansionary phase, nearly quadrupling in seven years.",
     
     // Sectoral Section
     sectoralTransformation: "Sectoral Transformation",
     newThree: "The \"New Three\"",
+    newThreeDescription: "The export composition shifted from the 'Old Three' (Clothing, Furniture, Appliances) to high-value green technology, signaling China's movement up the global value chain.",
+    electricVehicles: "Electric Vehicles",
+    solarPhotovoltaics: "Solar Photovoltaics",
+    lithiumBatteries: "Lithium Batteries",
+    combinedNewThreeExports: "Combined \"New Three\" Exports (2023)",
+    
+    // EV Details
+    evExports: "7M+ units",
+    evGrowth: "+21%",
+    evMarketShare: "12.8% of EU market",
+    evDescription: "BYD became the world's largest EV manufacturer. China pivoted to Europe and surged PHEV exports to address range anxiety concerns.",
+    
+    // Solar Details
+    solarExports: "Record Volume",
+    solarGrowth: "-40% value",
+    solarMarketShare: "$0.07-0.09/watt",
+    solarDescription: "Record volumes (46 GW in August) but collapsed value due to deflationary pricing. China canceled 13% VAT export rebate to force consolidation.",
+    
+    // Battery Details
+    batteryExports: "+23% growth",
+    batteryGrowth: "+23%",
+    batteryMarketShare: "69% global market",
+    batteryDescription: "China controls 69% of the global EV battery market. CATL dominates global supply chain. West remains dependent on Chinese refined lithium.",
     
     // Geographic Section
     tradeFlowAnalysis: "Trade Flow Analysis",
     connectorEconomy: "The Connector Economy",
+    geographicDescription: "Exports to the U.S. fell 20%, yet total exports rose. The solution? Strategic transshipment through ASEAN partners.",
     
     // Drivers Section
     driversLabel: "Structural Analysis",
@@ -82,14 +107,39 @@ export const translations = {
     // Timeline Section
     historicalEvolution: "历史演变",
     theSurge: "激增期：2018-2025",
+    timelineDescription: "尽管中美贸易战于2018年开始，但中国的贸易顺差却矛盾地进入了新的扩张阶段，七年内增长了近四倍。",
     
     // Sectoral Section
     sectoralTransformation: "行业转型",
     newThree: "新三样",
+    newThreeDescription: "出口构成从'老三样'（服装、家具、家电）转向高价值绿色技术，标志着中国在全球价值链中的地位提升。",
+    electricVehicles: "电动汽车",
+    solarPhotovoltaics: "太阳能光伏",
+    lithiumBatteries: "锂电池",
+    combinedNewThreeExports: "新三样合计出口额（2023年）",
+    
+    // EV Details
+    evExports: "700万+辆",
+    evGrowth: "+21%",
+    evMarketShare: "占欧盟市场12.8%",
+    evDescription: "比亚迪成为全球最大的电动汽车制造商。中国转向欧洲市场，大幅增加插电式混合动力汽车出口以解决续航焦虑问题。",
+    
+    // Solar Details
+    solarExports: "创纪录产量",
+    solarGrowth: "价值-40%",
+    solarMarketShare: "0.07-0.09美元/瓦",
+    solarDescription: "创纪录产量（8月46吉瓦），但由于通缩定价导致价值暴跌。中国取消13%增值税出口退税以迫使行业整合。",
+    
+    // Battery Details
+    batteryExports: "+23%增长",
+    batteryGrowth: "+23%",
+    batteryMarketShare: "69%全球市场",
+    batteryDescription: "中国控制全球69%的电动汽车电池市场。宁德时代主导全球供应链。西方仍依赖中国精炼锂。",
     
     // Geographic Section
     tradeFlowAnalysis: "贸易流向分析",
     connectorEconomy: "连接器经济",
+    geographicDescription: "对美出口下降20%，但总出口却上升。解决方案？通过东盟伙伴进行战略转运。",
     
     // Drivers Section
     driversLabel: "结构性分析",
