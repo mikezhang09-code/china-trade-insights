@@ -140,7 +140,7 @@ const NewThreeSection = () => {
         >
           <div className="inline-flex flex-col items-center bg-card border border-border rounded-2xl p-8">
             <p className="data-label text-muted-foreground mb-2">
-              Combined "New Three" Exports (2023)
+              {t('combinedNewThreeExports')}
             </p>
             <div className="flex items-baseline gap-1">
               <span className="text-primary text-lg font-mono">¥</span>
@@ -149,7 +149,7 @@ const NewThreeSection = () => {
                 decimals={0}
                 className="text-5xl md:text-6xl font-bold text-gradient-gold"
               />
-              <span className="text-primary text-2xl font-mono ml-1">Trillion+</span>
+              <span className="text-primary text-2xl font-mono ml-1">{t('trillionPlus')}</span>
             </div>
             <p className="text-muted-foreground mt-2">(~$150B, +29.9% YoY)</p>
           </div>

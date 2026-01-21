@@ -127,24 +127,24 @@ const GeographicPivot = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <h4 className="font-display text-xl font-bold text-foreground mb-4">
-              Latin America: Strategic Backyard
+              {t('latinAmericaTitle')}
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <div>
-                  <p className="text-foreground font-medium">Port of Chancay (Peru)</p>
+                  <p className="text-foreground font-medium">{t('portOfChancay')}</p>
                   <p className="text-sm text-muted-foreground">
-                    A new direct artery to Shanghai, bypassing U.S. routes
+                    {t('chancayDescription')}
                   </p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <div>
-                  <p className="text-foreground font-medium">The Soy Swap</p>
+                  <p className="text-foreground font-medium">{t('soySwap')}</p>
                   <p className="text-sm text-muted-foreground">
-                    Shifting purchases to Brazil to sideline U.S. farmers
+                    {t('soySwapDescription')}
                   </p>
                 </div>
               </li>
@@ -159,24 +159,24 @@ const GeographicPivot = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <h4 className="font-display text-xl font-bold text-foreground mb-4">
-              ASEAN: The Connector Hub
+              {t('aseanConnectorHub')}
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <span className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
                 <div>
-                  <p className="text-foreground font-medium">+13.4% Export Growth</p>
+                  <p className="text-foreground font-medium">{t('exportGrowthLabel')}</p>
                   <p className="text-sm text-muted-foreground">
-                    ASEAN overtook EU/US as China's #1 trading partner
+                    {t('aseanTradingPartner')}
                   </p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <span className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
                 <div>
-                  <p className="text-foreground font-medium">RCEP Integration</p>
+                  <p className="text-foreground font-medium">{t('rcepIntegration')}</p>
                   <p className="text-sm text-muted-foreground">
-                    Regional trade pact with China at the center
+                    {t('rcepDescription')}
                   </p>
                 </div>
               </li>

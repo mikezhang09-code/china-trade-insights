@@ -29,6 +29,19 @@ export const translations = {
     solarPhotovoltaics: "Solar Photovoltaics",
     lithiumBatteries: "Lithium Batteries",
     combinedNewThreeExports: "Combined \"New Three\" Exports (2023)",
+    trillionPlus: "Trillion+",
+    
+    // Geographic Regional Stats
+    latinAmericaTitle: "Latin America: Strategic Backyard",
+    portOfChancay: "Port of Chancay (Peru)",
+    chancayDescription: "A new direct artery to Shanghai, bypassing U.S. routes",
+    soySwap: "The Soy Swap",
+    soySwapDescription: "Shifting purchases to Brazil to sideline U.S. farmers",
+    aseanConnectorHub: "ASEAN: The Connector Hub",
+    exportGrowthLabel: "+13.4% Export Growth",
+    aseanTradingPartner: "ASEAN overtook EU/US as China's #1 trading partner",
+    rcepIntegration: "RCEP Integration",
+    rcepDescription: "Regional trade pact with China at the center",
     
     // EV Details
     evExports: "7M+ units",
@@ -163,6 +176,19 @@ export const translations = {
     solarPhotovoltaics: "太阳能光伏",
     lithiumBatteries: "锂电池",
     combinedNewThreeExports: "新三样合计出口额（2023年）",
+    trillionPlus: "万亿+",
+    
+    // Geographic Regional Stats
+    latinAmericaTitle: "拉丁美洲：战略后院",
+    portOfChancay: "钱凯港（秘鲁）",
+    chancayDescription: "通往上海的新直接通道，绕过美国航线",
+    soySwap: "大豆互换",
+    soySwapDescription: "转向巴西采购以排挤美国农民",
+    aseanConnectorHub: "东盟：连接器枢纽",
+    exportGrowthLabel: "+13.4%出口增长",
+    aseanTradingPartner: "东盟超越欧盟/美国成为中国第一大贸易伙伴",
+    rcepIntegration: "RCEP一体化",
+    rcepDescription: "以中国为中心的区域贸易协定",
     
     // EV Details
     evExports: "700万+辆",
