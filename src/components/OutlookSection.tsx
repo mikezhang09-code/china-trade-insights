@@ -18,6 +18,7 @@ const OutlookSection = () => {
         "EU investigating anti-dumping measures on Chinese EVs",
         "Brazil, Indonesia, Turkey imposing protectionist measures",
         "U.S. universal tariffs of 10-60%, avg. 57.6%",
+      ].map((_, index) => t(`globalBacklashItem${index + 1}`)),
       ],
     },
     {
