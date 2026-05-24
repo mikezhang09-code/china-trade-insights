@@ -8,38 +8,44 @@ const previewDomain = process.env.X_IDE_PREVIEW_DOMAIN || "";
 const proxyHost = spaceKey && previewDomain ? `${spaceKey}.${previewDomain}` : "";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  base: proxyHost ? `/proxy/8080/` : "/",
-  server: {
-    host: "0.0.0.0",
-    port: 8080,
-    origin: proxyHost ? `https://${proxyHost}` : "",
-    allowedHosts: proxyHost ? [proxyHost] : [],
-  },
-  plugins: [
-    react(),
-    mode === "development" && componentTagger(),
-    // CloudStudio proxy strips /proxy/8080/ prefix before forwarding to Vite.
-    // But Vite with base="/proxy/8080/" expects that prefix on all paths.
-    // This middleware re-adds the prefix so Vite can resolve correctly.
-    {
-      name: "cloudstudio-proxy-rewrite",
-      configureServer(server) {
-        server.middlewares.use((req, _res, next) => {
-          if (!proxyHost) return next();
-          const url = req.url || "/";
-          // Skip if already has the prefix
-          if (url.startsWith("/proxy/8080")) return next();
-          // Rewrite Vite asset paths to include the prefix
-          req.url = "/proxy/8080" + url;
-          next();
-        });
+export default defineConfig(({ mode }) => {
+  const isCloudStudioDev = mode === "development" && proxyHost;
+  // GitHub Pages serves at /<repo-name>/, so base must match in production.
+  // Vite replaces <base> in index.html, and BASE_URL is set accordingly.
+  const productionBase = "/china-trade-insights/";
+
+  return {
+    base: isCloudStudioDev ? `/proxy/8080/` : productionBase,
+    server: {
+      host: "0.0.0.0",
+      port: 8080,
+      origin: isCloudStudioDev ? `https://${proxyHost}` : "",
+      allowedHosts: isCloudStudioDev ? [proxyHost] : [],
+    },
+    plugins: [
+      react(),
+      mode === "development" && componentTagger(),
+      // CloudStudio proxy strips /proxy/8080/ prefix before forwarding to Vite.
+      // But Vite with base="/proxy/8080/" expects that prefix on all paths.
+      // This middleware re-adds the prefix so Vite can resolve correctly.
+      isCloudStudioDev && {
+        name: "cloudstudio-proxy-rewrite",
+        configureServer(server) {
+          server.middlewares.use((req, _res, next) => {
+            const url = req.url || "/";
+            // Skip if already has the prefix
+            if (url.startsWith("/proxy/8080")) return next();
+            // Rewrite Vite asset paths to include the prefix
+            req.url = "/proxy/8080" + url;
+            next();
+          });
+        },
+      },
+    ].filter(Boolean),
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
       },
     },
-  ].filter(Boolean),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
-}));
+  };
+});
